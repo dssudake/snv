@@ -10,7 +10,7 @@ const AddUserForm = ({ newUserId, addNewUser }) => {
   };
 
   return (
-    <Card>
+    <Card className="shadow">
       <Card.Body>
         <Card.Title className="text-center">Add User</Card.Title>
         <Form.Group className="my-3">

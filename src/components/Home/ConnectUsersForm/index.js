@@ -12,7 +12,7 @@ const ConnectUsersForm = ({ userList, userConnections, addNewConnection }) => {
   };
 
   return (
-    <Card>
+    <Card className="shadow">
       <Card.Body>
         <Card.Title className="text-center">Connect Users</Card.Title>
         <Form.Group className="my-3">

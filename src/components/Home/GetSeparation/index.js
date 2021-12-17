@@ -38,7 +38,7 @@ const GetSeparation = ({ userList, userConnections }) => {
   return (
     <Fragment>
       <Col md={{ span: 6, order: 2 }} lg={{ span: 4, order: 1 }} xxl={3}>
-        <Card>
+        <Card className="shadow">
           <Card.Body>
             <Card.Title className="text-center">Get Separation</Card.Title>
             <Form.Group className="my-3">
@@ -96,7 +96,7 @@ const GetSeparation = ({ userList, userConnections }) => {
         lg={{ span: 4, order: 3 }}
         xxl={3}
       >
-        <Card className="h-100">
+        <Card className="snv-home--deg-of-seperation h-100 shadow">
           <Card.Body>
             <Card.Title className="text-center">
               Degree of Separation

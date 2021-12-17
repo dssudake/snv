@@ -1,4 +1,13 @@
 .snv-home--wrapper {
   min-height: calc(100vh - 56px);
   margin-top: 24px;
+  background-color: var(--snv-primary);
+}
+
+.snv-home--network-visualizer {
+  background-color: var(--snv-secondary);
+}
+
+.snv-home--deg-of-seperation {
+  background-color: var(--snv-secondary);
 }
