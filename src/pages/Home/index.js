@@ -6,18 +6,30 @@ import AddUserForm from "../../components/Home/AddUserForm";
 import ConnectUsersForm from "../../components/Home/ConnectUsersForm";
 import NetworkGraph from "../../components/Home/NetworkGraph";
 import GetSeparation from "../../components/Home/GetSeparation";
+import {
+  defaultUserList,
+  defaultUserConnections,
+  defaultNetwork,
+} from "../../utils/data";
 
 const Home = () => {
-  const [userList, setUserList] = useState({});
-  const [newUserId, setNewUserId] = useState(1);
-  const [userConnections, setUserConnections] = useState({});
-  const [network, setNetwork] = useState({
-    key: 0,
-    graph: {
-      nodes: [],
-      edges: [],
-    },
-  });
+  var isLoadData = localStorage.getItem("isLoadData") === "true";
+  const [userList, setUserList] = useState(isLoadData ? defaultUserList : {});
+  const [newUserId, setNewUserId] = useState(isLoadData ? 6 : 1);
+  const [userConnections, setUserConnections] = useState(
+    isLoadData ? defaultUserConnections : {}
+  );
+  const [network, setNetwork] = useState(
+    isLoadData
+      ? defaultNetwork
+      : {
+          key: 0,
+          graph: {
+            nodes: [],
+            edges: [],
+          },
+        }
+  );
 
   const addNewUser = (name) => {
     setUserList({ ...userList, [newUserId]: name });
