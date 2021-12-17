@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Row, Col } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 
 import "./styles.css";
 import AddUserForm from "../../components/Home/AddUserForm";
 import ConnectUsersForm from "../../components/Home/ConnectUsersForm";
 import NetworkGraph from "../../components/Home/NetworkGraph";
+import GetSeparation from "../../components/Home/GetSeparation";
 
 const Home = () => {
   const [userList, setUserList] = useState({});
@@ -50,23 +51,32 @@ const Home = () => {
   };
 
   return (
-    <Row className="snv-home--wrapper justify-content-center py-5">
-      <Col md={6} lg={4} xxl={3}>
-        <AddUserForm newUserId={newUserId} addNewUser={addNewUser} />
-      </Col>
+    <Container className="snv-home--wrapper" fluid>
+      <Row className="justify-content-center py-5 gy-3 gy-md-4">
+        <Col md={6} lg={4} xxl={3}>
+          <AddUserForm newUserId={newUserId} addNewUser={addNewUser} />
+        </Col>
 
-      <Col md={6} lg={4} xxl={3}>
-        <ConnectUsersForm
-          userList={userList}
-          userConnections={userConnections}
-          addNewConnection={addNewConnection}
-        />
-      </Col>
+        <Col md={6} lg={4} xxl={3}>
+          <ConnectUsersForm
+            userList={userList}
+            userConnections={userConnections}
+            addNewConnection={addNewConnection}
+          />
+        </Col>
 
-      <Col lg={8} xxl={6}>
-        <NetworkGraph network={network} />
-      </Col>
-    </Row>
+        <Col
+          xs={{ order: 2 }}
+          md={{ order: 1 }}
+          lg={{ span: 8, order: 2 }}
+          xxl={6}
+        >
+          <NetworkGraph network={network} />
+        </Col>
+
+        <GetSeparation userList={userList} userConnections={userConnections} />
+      </Row>
+    </Container>
   );
 };
 

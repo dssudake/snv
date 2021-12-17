@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import { Container } from "react-bootstrap";
 
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
@@ -9,9 +8,7 @@ const App = () => {
     <Fragment>
       <Navbar />
 
-      <Container fluid>
-        <Home />
-      </Container>
+      <Home />
     </Fragment>
   );
 };
